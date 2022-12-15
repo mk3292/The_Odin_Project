@@ -1,0 +1,16 @@
+h1 {
+    color: rgb(8, 38, 211);
+    background-color: rgb(12, 2, 2);
+    font-size: 40px;
+}
+
+p {
+    color: rgb(255, 0, 0);
+}
+
+li,
+a {
+    font-size: 18px;
+    font-style: bold;
+    font-family: 'Helvetica', sans-serif;
+}
