@@ -21,11 +21,12 @@ function aRound(playerSelection, computerSelection) {
         if (computerSelection === 'rock') {
             return "Rock and rock results in tie";
         }
-        else if (computerSelection === 'scissors') {
-            
+        
+        else if (computerSelection === 'scissors') {    
             playerScore += 1;
             return "You win, rock beats scissors";
         }
+        
         else {
             computerScore += 1;
             return "You lose, rock gets wrapped by paper";
@@ -37,9 +38,11 @@ function aRound(playerSelection, computerSelection) {
             computerScore += 1;
             return "You lose, scissors get crushed with rock";
         }
+        
         else if (computerSelection === 'scissors') {
             return "Scissors and scissors results in tie";
         }
+        
         else {
             playerScore += 1;
             return "You win, scissors beats paper";
@@ -51,18 +54,16 @@ function aRound(playerSelection, computerSelection) {
             playerScore += 1;
             return "You win, paper beats rock";
         }
-        else if (computerSelection === 'scissors') {
-           
+
+        else if (computerSelection === 'scissors') {   
             computerScore += 1;
             return "You lose, paper loses to scissors";
         }
+
         else {
             return "Paper and paper results in tie";
         }
-
     }
-
-
 }
 
 function game() {
@@ -73,13 +74,16 @@ function game() {
         console.log("You score is: " + playerScore);
         console.log("Computer score is: " + computerScore);
     }
+
     if (playerScore > computerScore) {
         return "You win the game";
     }
+
     else if (playerScore < computerScore) {
         return "You lose";
     }
+
     else {
-        return "Its a tie";
+        return "It's a tie";
     }
 }
