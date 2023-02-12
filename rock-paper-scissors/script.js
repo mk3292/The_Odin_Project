@@ -1,6 +1,74 @@
 let playerScore = 0;
 let computerScore = 0;
 
+const rock = document.querySelector('#rock');
+const scissors = document.querySelector('#scissors');
+const paper = document.querySelector('#paper');
+
+rock.addEventListener('click', () => {
+    if (playerScore == 5 || computerScore == 5) {
+        playerScore = computerScore = 0;
+        document.getElementById("yourScore").innerHTML = 'Your score: 0';
+        document.getElementById("compScore").innerHTML = 'Computer score: 0';
+        document.getElementById('winner').innerHTML = '';
+    }
+    else {
+        const playChoi = 'rock';
+        const compChoi = getComputerChoice();
+        console.log(aRound(playChoi, compChoi));
+        winner(playerScore, computerScore);
+    }
+});
+
+scissors.addEventListener('click', () => {
+    if (playerScore == 5 || computerScore == 5) {
+        playerScore = computerScore = 0;
+        document.getElementById("yourScore").innerHTML = 'Your score: 0';
+        document.getElementById("compScore").innerHTML = 'Computer score: 0';
+        document.getElementById('winner').innerHTML = '';
+    }
+    else {
+        const playChoi = 'scissors';
+        const compChoi = getComputerChoice();
+        console.log(aRound(playChoi, compChoi));
+        winner(playerScore, computerScore);
+    }
+});
+
+paper.addEventListener('click', () => {
+    if (playerScore == 5 || computerScore == 5) {
+        playerScore = computerScore = 0;
+        document.getElementById("yourScore").innerHTML = 'Your score: 0';
+        document.getElementById("compScore").innerHTML = 'Computer score: 0';
+        document.getElementById('winner').innerHTML = '';
+    }
+    else {
+        const playChoi = 'paper';
+        const compChoi = getComputerChoice();
+        console.log(aRound(playChoi, compChoi));
+        winner(playerScore, computerScore);
+    }
+});
+
+function winner(pScore, cScore) {
+    if (pScore <= 4 && cScore <= 4) {
+        document.getElementById("yourScore").innerHTML = ('Your Score: ' + pScore);
+        document.getElementById("compScore").innerHTML = ('Computer Score: ' + cScore);
+    }
+    else if (pScore == 5) {
+        document.getElementById("yourScore").innerHTML = ('Your Score: ' + pScore);
+        document.getElementById("compScore").innerHTML = ('Computer Score: ' + cScore);
+        document.getElementById("winner").innerHTML = 'You Win! Click any button to play again';
+        console.log("You win!");
+    }
+
+    else if (cScore == 5) {
+        document.getElementById("yourScore").innerHTML = ('Your Score: ' + pScore);
+        document.getElementById("compScore").innerHTML = ('Computer Score: ' + cScore);
+        document.getElementById("winner").innerHTML = 'Computer Wins! Click any button to play again';
+        console.log("Computer wins!");
+    }
+}
 
 function getComputerChoice () {
     let choice = [
@@ -67,23 +135,23 @@ function aRound(playerSelection, computerSelection) {
 }
 
 function game() {
-    for (let i = 0; i < 5; i++) {
-        const playerSelection = prompt("Choose what you want");
-        let computerSelection = getComputerChoice();
-        console.log(aRound(playerSelection, computerSelection));
-        console.log("You score is: " + playerScore);
-        console.log("Computer score is: " + computerScore);
+    const playerSelection = prompt("Choose what you want");
+    let computerSelection = getComputerChoice();
+    console.log(aRound(playerSelection, computerSelection));
+    console.log("You score is: " + playerScore);
+    console.log("Computer score is: " + computerScore);
+
+    if (playerScore == 5) {
+        playerScore = 0;
+        computerScore = 0;
     }
 
-    if (playerScore > computerScore) {
-        return "You win the game";
+    else if (computerScore == 5) {
+        playerScore = 0;
+        computerScore = 0;
     }
 
-    else if (playerScore < computerScore) {
-        return "You lose";
-    }
-
-    else {
-        return "It's a tie";
-    }
+    winner(playerScore, computerScore);
 }
+
+
