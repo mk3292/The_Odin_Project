@@ -1,0 +1,14 @@
+body {
+    max-width: 700px;
+
+}
+#palatte {
+    display: grid;
+    grid-template-columns: repeat(16, auto);
+}
+
+#palatte > div {
+    border: 1px solid black;
+    aspect-ratio: 1;            /* Keeps height/width of each cell the same */
+
+}
