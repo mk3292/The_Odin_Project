@@ -1,0 +1,89 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+.btn {
+    width: 80px;
+    height: 80px;
+    font-size: 45px;
+    margin: 15px;
+    background-color: white;
+}
+
+.number {
+    border: 2px solid rgb(204, 156, 25);
+    border-radius: 15px;
+}
+
+.number:hover {
+    background-color: palegoldenrod
+}
+
+.operator {
+    border: 2px solid rgb(75, 218, 32);
+    border-radius: 15px;
+}
+
+.operator:hover {
+    background-color: palegreen;
+}
+
+.clear {
+    border: 2px solid red;
+    border-radius: 15px;
+}
+
+.clear:hover {
+    background-color: palevioletred;
+}
+
+.decimal {
+    border: 2px solid blueviolet;
+    border-radius: 15px;
+}
+
+.decimal:hover {
+    background-color: paleturquoise;
+}
+
+.equal {
+    border: 2px solid indigo;
+    border-radius: 15px;
+}
+
+.equal:hover {
+    background-color: palevioletred;
+}
+
+.firstrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+#display {
+    width: 300px;
+    border: 2px solid teal;
+    height: 80px;
+    margin: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.first {
+    font-size: 20px;
+    margin: 5px;
+}
+
+.next {
+    font-size: 30px;
+    margin: 5px;
+}
