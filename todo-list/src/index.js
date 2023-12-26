@@ -15,6 +15,9 @@ let clickEventsModule = (function () {
     const clearButtom = document.querySelector(".reset-button");
     clearButtom.addEventListener("click", clearForm);
 
+    const submitButtom = document.querySelector(".submit-button");
+    submitButtom.addEventListener("click", createToDo);
+
 })();
 
 console.log('hello');
